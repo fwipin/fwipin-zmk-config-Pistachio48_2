@@ -1,0 +1,274 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+//Layer
+#define default_layer 0
+#define lyr1          1
+#define lyr2          2
+
+/ {
+    /*
+    &mt {
+    tapping-term-ms = <400>;
+    };
+    ,----------------------------------------------------.
+    | behaviors     | Tap   | Hold  |DoubleTap |DTap&Hld |
+    ----------------+-------+-------+----------+---------
+    | td_dt_cmm     | . 	| 	    | ,        |    	 |
+    | td_dt_cln     | .	    | 	    | :        |    	 |
+    | td_cmm_sm     | ,	    | 	    | ;        |    	 |
+    | td_hypn_tld	| -     | 	    | ~        |    	 |
+    | td_qmrk_excl  | ?     | 	    | !        |    	 |
+    | td_pls_mns    | + 	| 	    | -        |    	 |
+    | td_astrsk_slsh| * 	| 	    | /        |    	 |
+    | td_prn        | ()	|  	    | )        |    	 |
+    | td_brckt      | []	| 	    | ]        |    	 |
+    | td_brc        | {}	| 	    | }        |    	 |
+    | td_angl	    | <>	| 	    | >        |    	 |
+    | td_zr_thsnd   | 0	    | 	    | ,000	   |    	 |
+    | td_mt_kn      | KANA	| LAlt  | TAB	   | LCntrl  |
+    | td_mt_bs	    | BckSp | RCtrl | Shift+TAB| RAlt	 |
+    | td_mt_l1      | Space | LYR1  | F7	   | Shft	 |
+    | td_mt_l2      | F7	| Shift | TAB	   | LYR2	 |
+    | td_mt_r1      | Enter | LYR1	| F10	   | Shft	 |
+    | td_mt_r2      | F10	| Shift | Shift+TAB| LYR2	 |
+    ,----------------------------------------------------.
+    ,------------------------------------------------------------.
+    | RotaryEncoder |   clckws    | cntr-clckws |      Key      |
+    ----------------+-------------+-------------+----------------
+    |  re_up_down   |    UP       |   DOWN      |               |
+    |               |    Right    |   Left      |               |
+    |               |  &mkp MB4   |  &mkp MB5   |               |
+    |               |             |             |               |
+    |               |             |             |               |
+    |               |             |             |               |
+    ,------------------------------------------------------------.
+    &ind_bat  // indicate battery level
+    &ind_con  // indicate connectivity status
+    */
+	behaviors {
+        td_dt_cmm: tap_dance_dot_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_DOT_COMMA";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&kp COMMA>;
+        };
+        td_dt_cln: tap_dance_dot_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_DOT_COLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&kp COLON>;
+        };
+        td_cmm_sm: tap_dance_comma_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_COMMA_SEMICOLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+        };
+        td_hypn_tld: tap_dance_hyphen_tilde {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_HYPHEN_TILDE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&kp TILDE>;
+        };
+		td_qmrk_excl: tap_dance_question_exclamation {
+			compatible = "zmk,behavior-tap-dance";
+			label = "TAP_DANCE_QUESTION_EXCLAMATION";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&kp QMARK>, <&kp EXCL>;
+  		};
+        td_pls_mns: tap_dance_plus_minus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_PLUS_MINUS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PLUS>, <&kp MINUS>;
+        };
+        td_astrsk_slsh: tap_dance_asterisk_slash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ASTERISK_SLASH";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp ASTERISK>, <&kp SLASH>;
+        };
+        td_prn: tap_dance_parentheses {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_PARENTHESES";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+        };
+        td_brckt: tap_dance_brackets {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_BRACKETS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+        td_brc: tap_dance_braces {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_BRACES";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE>, <&kp RIGHT_BRACE>;
+        };
+        td_angl: tap_dance_angle_brackets {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ANGLE_BRACKETS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LESS_THAN &kp GREATER_THAN>, <&kp GREATER_THAN>;
+        };
+		td_zr_thsnd: tap_dance_zero_thousand {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ZERO_THOUSAND";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            //bindings = <&kp N0>, <&zr_thsnd>;
+            bindings = <&kp N0>, <&kp COMMA &kp N0 &kp N0 &kp N0>;
+        };
+        /*
+        zr_thsnd: zero_thousand {
+            compatible = "zmk,behavior-macro";
+            label = "ZERO_THOUSAND";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA &kp N0 &kp N0 &kp N0>;
+        };
+        */
+        td_mt_kn: tap_dance_mt_kana {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LALT INT4>, <&mt LCTRL TAB>;
+        };
+        td_mt_bs: tap_dance_mt_bksp {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt RCTRL BACKSPACE>, <&mt RALT LS(TAB)>;
+        };
+        td_mt_l1: tap_dance_mt_llyr1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            //bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
+            bindings = <&lt lyr1 SPACE>, <&mt RSHIFT F7>;
+        };
+        td_mt_l2: tap_dance_mt_llyr2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt RSHIFT F7>, <&lt lyr2 TAB>;
+        };
+        td_mt_r1: tap_dance_mt_rlyr1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt lyr1 ENTER>, <&mt RSHIFT F10>;
+        };
+        td_mt_r2: tap_dance_mt_rlyr2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings =  <&mt RSHIFT F10>, <&lt lyr2 LS(TAB)>;
+        };
+        re_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+	    };
+        re_ud: re_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp UP>, <&kp DOWN>;
+        };
+    };
+
+	keymap {
+		compatible = "zmk,keymap";
+		default_layer { //Layer 0
+		    /*   
+			,-------------------------------------------------------------------------------------------------------------.
+			|   Q    |   W    |   E    |   R    |   T    |                    |   Y    |   U    |   I    |   O    |   P    |
+			|--------+--------+--------+--------+--------+--------------------+--------+--------+--------+--------+--------|
+			|   A    | S/PTBL | D/POBJ | F/PFNT |   G    |                    |   H    |   J    |   K    |   L    |  -|~   |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|   Z    |   X    |   C    |   V    |   B    | Ind_Bat|  | Ind_Con|   N    |   M    |  ,|;   |  .|:   |  ?|!   |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |        |   ~`   |KANA/Alt|Sp/LYR1 | Ctrl+C |  | Ctrl+V |En/LYR1 |Bksp/Ctl|  '\    |        |        |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |        |  Ctrl  |CC/Sf\L2| mouseL | mouseR |  | Ctrl+C | Ctrl+V |CV/Sf\L2|  Alt   |        |        |
+			,-------------------------------------------------------------------------------------------------------------.
+            */
+            bindings = <
+                &kp Q       &kp W       &kp E       &kp R       &kp T                                  &kp Y       &kp U       &kp I       &kp O         &kp P    
+                &kp A       &kp S       &kp D       &kp F       &kp G                                  &kp H       &kp J       &kp K       &kp L         &td_hypn_tld
+                &kp Z       &kp X       &kp C       &kp V       &kp B       &kp RC(C)      &kp RC(V)   &kp N       &kp M       &td_cmm_sm  &td_dt_cln    &td_qmrk_excl
+                &none       &none       &kp GRAVE   &td_mt_kn   &td_mt_l1   &kp RC(C)      &kp RC(V)   &td_mt_r1   &td_mt_bs   &kp APOS    &none         &none
+                &none       &none       &kp LCTRL   &td_mt_l2   &mkp LCLK   &mkp RCLK      &kp RC(C)   &kp RC(V)   &td_mt_r2   &kp RALT    &none         &none
+            >;
+                //sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+                sensor-bindings = <&re_kp UP DOWN &re_ud &re_ud &re_ud>;
+		};
+        lyr1 { //Layer 1
+		    /*   
+			,-------------------------------------------------------------------------------------------------------------.
+			| PrtSc  |   !    |   @    |   #    |   $    |                    |   =    |   7    |   8    |   9    | 0|,000 |
+			|--------+--------+--------+--------+--------+--------------------+--------+--------+--------+--------+--------|
+			|  ESC   |   %    |   ^    |   &    |   *    |                    |  ()|)  |   4    |   5    |   6    |  +|-   |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|  CMMD  |  []|]  |  ()|)  |  {}|}  |  <>|>  | Ctrl+0 |  |  MUTE  |  .|,   |   1    |   2    |   3    |  *|/   |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |  ESC   |   ~`   |KANA/Alt|Sp/LYR1 |   F7   |  |  F10   |En/LYR1 |Bksp/Ctl|   '    |   /    |        |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |  CMMD  |  Ctrl  |CC/Sf\L2| mouseL | mouseR |  | Ctrl+C | Ctrl+V |CV/Sf\L2|  Alt   |   \    |        |
+			,-------------------------------------------------------------------------------------------------------------.
+            */
+            bindings = <
+                &kp PSCRN   &kp EXCL    &kp AT      &kp HASH      &kp DLLR                                  &kp EQUAL    &kp N7         &kp N8      &kp N9          &td_zr_thsnd
+                &kp ESC     &kp PRCNT   &kp CARET   &kp AMPS      &kp ASTRK                                 &td_prn      &kp N4         &kp N5      &kp N6          &td_pls_mns
+                &kp LCMD    &td_brckt   &td_prn     &td_brc       &td_angl        &kp RC(0)      &kp C_MUTE &td_dt_cmm   &kp N1         &kp N2      &kp N3          &td_qmrk_excl
+                &none       &none       &kp GRAVE   &td_mt_kn     &td_mt_l1       &kp RC(C)      &kp RC(V)  &td_mt_r1    &td_mt_bs      &kp APOS    &none           &none
+                &none       &none       &kp LCTRL   &td_mt_l2     &mkp LCLK       &mkp RCLK      &kp RC(C)  &kp RC(V)    &td_mt_r2      &kp RALT    &none           &none
+            >;
+                sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+                //[_LYR1]   = { ENCODER_CCW_CW(RCTL(KC_PPLS), RCTL(KC_PMNS)),ENCODER_CCW_CW(RCTL(KC_Z),RCTL(KC_Y)),  ENCODER_CCW_CW(RCS(KC_TAB), RCTL(KC_TAB)),  ENCODER_CCW_CW(KC_WBAK, KC_WFWD)  }, 
+        };
+        lyr2 { //Layer 2
+		    /*   
+			,-------------------------------------------------------------------------------------------------------------.
+			| PrtSc  |   !    |   @    |   #    |   $    |                    |   =    |   7    |   8    |   9    | 0|,000 |
+			|--------+--------+--------+--------+--------+--------------------+--------+--------+--------+--------+--------|
+			|        |   %    |   ^    |   &    |   *    |                    |  ()|)  |   4    |   5    |   6    |  +|-   |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |  []|]  |  ()|)  |  {}|}  |  <>|>  | Ctrl+0 |  |  MUTE  |  .|,   |   1    |   2    |   3    |  *|/   |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |  ESC   |   ~`   |KANA/Alt|Sp/LYR1 |   F7   |  |  F10   |En/LYR1 |Bksp/Ctl|   '    |   /    |        |
+			|--------+--------+--------+--------+--------+--------+--+--------+--------+--------+--------+--------+--------|
+			|        |  CMMD  |  Ctrl  |CC/Sf\L2| mouseL | mouseR |  | Ctrl+C | Ctrl+V |CV/Sf\L2|  Alt   |   \    |        |
+			,-------------------------------------------------------------------------------------------------------------.
+            */
+            bindings = <
+                &sys_reset  &kp EXCL    &kp AT      &kp HASH      &kp DLLR                                  &kp EQUAL    &kp N7         &kp N8      &kp N9          &td_zr_thsnd
+                &bootloader &kp PRCNT   &kp CARET   &kp AMPS      &kp ASTRK                                 &td_prn      &kp N4         &kp N5      &kp N6          &td_pls_mns
+                &none       &td_brckt   &td_prn     &td_brc       &td_angl        &kp RC(0)      &kp C_MUTE &td_dt_cmm   &kp N1         &kp N2      &kp N3          &td_qmrk_excl
+                &none       &none       &kp GRAVE   &td_mt_kn     &td_mt_l1       &kp RC(C)      &kp RC(V)  &td_mt_r1    &td_mt_bs      &kp APOS    &none           &none
+                &none       &none       &kp LCTRL   &td_mt_l2     &mkp LCLK       &mkp RCLK      &kp RC(C)  &kp RC(V)    &td_mt_r2      &kp RALT    &none           &none
+            >;
+                sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+                //[_LYR1]   = { ENCODER_CCW_CW(RCTL(KC_PPLS), RCTL(KC_PMNS)),ENCODER_CCW_CW(RCTL(KC_Z),RCTL(KC_Y)),  ENCODER_CCW_CW(RCS(KC_TAB), RCTL(KC_TAB)),  ENCODER_CCW_CW(KC_WBAK, KC_WFWD)  }, 
+		};
+	};
+};

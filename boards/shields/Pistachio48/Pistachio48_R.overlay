@@ -1,0 +1,16 @@
+#include "Pistachio48.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+    row-offset = <6>;
+};
+
+&right_encoder1 {
+    status = "okay";
+};
+
+&right_encoder2 {
+    status = "okay";
+};
+
+

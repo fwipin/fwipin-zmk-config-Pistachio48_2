@@ -1,0 +1,16 @@
+file_format: "1"
+id: pistachio48
+name: Pistachio48
+type: shield
+url: https://github.com/fwipin/zmk-config-Pistachio48/
+requires: [seeeduino_xiao_ble]
+features:
+  - Split Keyboards
+  - Bluetooth
+  - 48 keys
+  - 4 encoders
+  - pointer
+siblings:
+  -  Pistachio48_R
+  -  Pistachio48_L
+  -  Settings_reset

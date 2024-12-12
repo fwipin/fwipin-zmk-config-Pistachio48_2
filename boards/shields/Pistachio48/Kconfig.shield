@@ -1,0 +1,5 @@
+config SHIELD_PISTACHIO48_L
+    def_bool $(shields_list_contains,Pistachio48_L)
+
+config SHIELD_PISTACHIO48_R
+    def_bool $(shields_list_contains,Pistachio48_R)
