@@ -216,8 +216,8 @@
                 &kp Q       &kp W       &kp E       &kp R       &kp T                                  &kp Y       &kp U       &kp I       &kp O         &kp P    
                 &kp A       &kp S       &kp D       &kp F       &kp G                                  &kp H       &kp J       &kp K       &kp L         &td_hypn_tld
                 &kp Z       &kp X       &kp C       &kp V       &kp B       &kp RC(C)      &kp RC(V)   &kp N       &kp M       &td_cmm_sm  &td_dt_cln    &td_qmrk_excl
-                &none       &none       &kp GRAVE   &td_mt_kn   &td_mt_l1   &kp RC(C)      &kp RC(V)   &td_mt_r1   &td_mt_bs   &kp APOS    &none         &none
-                &none       &none       &kp LCTRL   &td_mt_l2   &mkp LCLK   &mkp RCLK      &kp RC(C)   &kp RC(V)   &td_mt_r2   &kp RALT    &none         &none
+                                        &kp GRAVE   &td_mt_kn   &td_mt_l1   &kp RC(C)      &kp RC(V)   &td_mt_r1   &td_mt_bs   &kp APOS    
+                                        &kp LCTRL   &td_mt_l2   &mkp LCLK   &mkp RCLK      &kp RC(C)   &kp RC(V)   &td_mt_r2   &kp RALT    
             >;
                 //sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
                 sensor-bindings = <&re_kp UP DOWN &re_ud &re_ud &re_ud>;
@@ -240,8 +240,8 @@
                 &kp PSCRN   &kp EXCL    &kp AT      &kp HASH      &kp DLLR                                  &kp EQUAL    &kp N7         &kp N8      &kp N9          &td_zr_thsnd
                 &kp ESC     &kp PRCNT   &kp CARET   &kp AMPS      &kp ASTRK                                 &td_prn      &kp N4         &kp N5      &kp N6          &td_pls_mns
                 &kp LCMD    &td_brckt   &td_prn     &td_brc       &td_angl        &kp RC(0)      &kp C_MUTE &td_dt_cmm   &kp N1         &kp N2      &kp N3          &td_qmrk_excl
-                &none       &none       &kp GRAVE   &td_mt_kn     &td_mt_l1       &kp RC(C)      &kp RC(V)  &td_mt_r1    &td_mt_bs      &kp APOS    &none           &none
-                &none       &none       &kp LCTRL   &td_mt_l2     &mkp LCLK       &mkp RCLK      &kp RC(C)  &kp RC(V)    &td_mt_r2      &kp RALT    &none           &none
+                                        &kp GRAVE   &td_mt_kn     &td_mt_l1       &kp RC(C)      &kp RC(V)  &td_mt_r1    &td_mt_bs      &kp APOS    
+                                        &kp LCTRL   &td_mt_l2     &mkp LCLK       &mkp RCLK      &kp RC(C)  &kp RC(V)    &td_mt_r2      &kp RALT    
             >;
                 sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
                 //[_LYR1]   = { ENCODER_CCW_CW(RCTL(KC_PPLS), RCTL(KC_PMNS)),ENCODER_CCW_CW(RCTL(KC_Z),RCTL(KC_Y)),  ENCODER_CCW_CW(RCS(KC_TAB), RCTL(KC_TAB)),  ENCODER_CCW_CW(KC_WBAK, KC_WFWD)  }, 
@@ -264,8 +264,8 @@
                 &sys_reset  &kp EXCL    &kp AT      &kp HASH      &kp DLLR                                  &kp EQUAL    &kp N7         &kp N8      &kp N9          &td_zr_thsnd
                 &bootloader &kp PRCNT   &kp CARET   &kp AMPS      &kp ASTRK                                 &td_prn      &kp N4         &kp N5      &kp N6          &td_pls_mns
                 &none       &td_brckt   &td_prn     &td_brc       &td_angl        &kp RC(0)      &kp C_MUTE &td_dt_cmm   &kp N1         &kp N2      &kp N3          &td_qmrk_excl
-                &none       &none       &kp GRAVE   &td_mt_kn     &td_mt_l1       &kp RC(C)      &kp RC(V)  &td_mt_r1    &td_mt_bs      &kp APOS    &none           &none
-                &none       &none       &kp LCTRL   &td_mt_l2     &mkp LCLK       &mkp RCLK      &kp RC(C)  &kp RC(V)    &td_mt_r2      &kp RALT    &none           &none
+                                        &kp GRAVE   &td_mt_kn     &td_mt_l1       &kp RC(C)      &kp RC(V)  &td_mt_r1    &td_mt_bs      &kp APOS    
+                                        &kp LCTRL   &td_mt_l2     &mkp LCLK       &mkp RCLK      &kp RC(C)  &kp RC(V)    &td_mt_r2      &kp RALT    
             >;
                 sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
                 //[_LYR1]   = { ENCODER_CCW_CW(RCTL(KC_PPLS), RCTL(KC_PMNS)),ENCODER_CCW_CW(RCTL(KC_Z),RCTL(KC_Y)),  ENCODER_CCW_CW(RCS(KC_TAB), RCTL(KC_TAB)),  ENCODER_CCW_CW(KC_WBAK, KC_WFWD)  }, 
